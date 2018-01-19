@@ -1,5 +1,3 @@
-extramath = {};
-
 extramath.modulesDef = {};
 extramath.modules = {};
 
@@ -68,7 +66,7 @@ extramath.require = function(deps, fn, stack, requiredAsArray){
 	});
 };
 
-function installAt(name, object){
+extramath.installAt = function(name, object){
 	var dest = this;
 	var parts = name.split('.');
 	parts.slice(0, parts.length - 1).forEach(function(part){
@@ -79,7 +77,7 @@ function installAt(name, object){
 		}
 	});
 	dest[parts[parts.length - 1]] = object;
-}
+};
 
 	//provide(function(x){
 	//	return null;
